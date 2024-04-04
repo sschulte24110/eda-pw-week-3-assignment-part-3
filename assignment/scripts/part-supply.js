@@ -40,9 +40,8 @@ for (x = 0; x < supplyChanges.length; x++) {
     } else if (supplyChanges[x] === 0) {
         console.log('No Change.');
     } else if (supplyChanges[x] < 0) {
-        // supplyChanges[x] = supplyChanges[x] * -1;
-        supplyChanges[x] = Math.abs(supplyChanges[x]);
-        console.log(`Removed ${supplyChanges[x]} parts.`);
+        const newValue = Math.abs(supplyChanges[x])
+        console.log(`Removed ${newValue} parts.`);
     }
 }
 
@@ -50,15 +49,13 @@ for (x = 0; x < supplyChanges.length; x++) {
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop. 
 console.log('7. Showing supplyChanges with "for of" loop');
-let supplyChanges2 = [3, 5, -6, 0, 7, 25];
- for (change of supplyChanges2) {
+ for (change of supplyChanges) {
     if (change > 0) {
         console.log(`Added ${change} parts.`);
     } else if (change === 0) {
         console.log('No Change.');
     } else if (change < 0) {
-        change = change * -1;
-        // change = Math.abs(change);
+        change = Math.abs(change);
         console.log(`Removed ${change} parts.`);
     }
  }
@@ -69,19 +66,19 @@ console.log('8. Total supplies available is:');
 
 let totalSupply = function() {
     let accumulator = 0;
-    for (let currentValue of supplyChanges2) {
+    for (let currentValue of supplyChanges) {
         accumulator = accumulator + currentValue;
     }
     return accumulator;
 }
 console.log(totalSupply());
 
-let totalSupply2 = supplyChanges2.reduce(function (accumulator, currentValue) {
+let totalSupply2 = supplyChanges.reduce(function (accumulator, currentValue) {
     return accumulator + currentValue;
 }, 0);
 console.log(totalSupply2);
 
-let totalSupply3 = supplyChanges2.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+let totalSupply3 = supplyChanges.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 console.log(totalSupply3);
 
 // 9. We have a large stash of parts in our warehouse that we 
@@ -92,10 +89,14 @@ console.log(totalSupply3);
 //    Then log how many boxes were filled, and how many parts are left over.
 console.log('9. Filling boxes with a "while" loop');
 
-// let parts = 0;
-// while (parts <= 572){
-//     if (parts % 7 === 0) {
-//         console.log(parts);
-//     }
-//     parts++;
-// }
+let parts = 1;
+let boxes = 0;
+let remainingParts = '';
+while (parts <= 572){
+    if (parts % 7 === 0) {
+        boxes++;
+    } else (remainingParts = parts % 7);
+    parts++;
+}
+console.log(`There were ${boxes} boxes filled.`);
+console.log(`There are ${remainingParts} remaining parts.`);
