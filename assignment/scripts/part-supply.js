@@ -108,6 +108,3 @@ while (parts <= 572){
 }
 console.log(`There were ${boxes} boxes filled.`);
 console.log(`There are ${remainingParts} remaining parts.`);
-
-let results = supplyChanges.filter(index);
-alert(results);
