@@ -23,8 +23,8 @@ console.log(supplyChanges[1]);
 // 4. The last item was added by mistake. Remove it from the 'supplyChanges' 
 //    array & console.log the value removed.
 console.log('4. Removed item:');
-
-console.log('Removed item was:', supplyChanges.pop());
+let removedItem = supplyChanges.pop();
+console.log('Removed item was:', removedItem);
 console.log(supplyChanges);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
@@ -74,7 +74,8 @@ console.log('8. Total supplies available is:');
 // for loop
 let supply = 0;
 for (let i = 0; i < supplyChanges.length; i++) {
-    supply += supplyChanges[i];
+    let currentNumber = supplyChanges[i];
+    supply += currentNumber;
 }
 console.log('Total parts available:', supply);
 
