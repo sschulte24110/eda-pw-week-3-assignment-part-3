@@ -12,7 +12,6 @@ console.log(partsNeeded);
 //    the following numbers: 3, 5, -6, 0, 7, 11
 console.log('2. Array of supplyChanges:');
 
-
 let supplyChanges = [3, 5, -6, 0, 7, 11];
 console.log(supplyChanges);
 
@@ -57,7 +56,7 @@ console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop. 
 console.log('7. Showing supplyChanges with "for of" loop');
 
-for (change of supplyChanges) {
+for (let change of supplyChanges) {
     if (change > 0) {
         console.log(`Added ${change} parts.`);
     } else if (change === 0) {
@@ -72,22 +71,38 @@ for (change of supplyChanges) {
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('8. Total supplies available is:');
 
-let totalSupply = function() {
-    let accumulator = 0;
-    for (let currentValue of supplyChanges) {
-        accumulator += currentValue;
-    }
-    return accumulator;
+// for loop
+let supply = 0;
+for (let i = 0; i < supplyChanges.length; i++) {
+    supply += supplyChanges[i];
 }
-console.log('Total supplies available:', totalSupply());
+console.log('Total parts available:', supply);
 
-let totalSupply2 = supplyChanges.reduce(function (accumulator, currentValue) {
-    return accumulator + currentValue;
-}, 0);
-console.log('Total supplies available:', totalSupply2);
+// for...of loop
+let partsCount = 0;
+for (let part of supplyChanges) {
+    partsCount += part;
+}
+console.log('Total parts available:', partsCount);
 
-let totalSupply3 = supplyChanges.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-console.log('Total supplies available:', totalSupply3);
+// I left the following functions in as a reminder for later down the road when looking back on this homework. These functions all yield 34 for total number of parts available.
+
+// let totalSupply = function() {
+//     let accumulator = 0;
+//     for (let currentValue of supplyChanges) {
+//         accumulator += currentValue;
+//     }
+//     return accumulator;
+// }
+// console.log('Total supplies available:', totalSupply());
+
+// let totalSupply2 = supplyChanges.reduce(function (accumulator, currentValue) {
+//     return accumulator + currentValue;
+// }, 0);
+// console.log('Total supplies available:', totalSupply2);
+
+// let totalSupply3 = supplyChanges.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+// console.log('Total supplies available:', totalSupply3);
 
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. 
