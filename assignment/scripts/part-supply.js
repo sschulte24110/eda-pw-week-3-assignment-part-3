@@ -122,5 +122,6 @@ while (parts <= 572){
     } else (remainingParts = parts % 7);
     parts++;
 }
-console.log(`There were ${boxes} boxes filled.`);
-console.log(`There are ${remainingParts} remaining parts.`);
+
+console.log('Boxes filled:', boxes);
+console.log('Remaining Parts:', remainingParts);
