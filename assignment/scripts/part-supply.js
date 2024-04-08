@@ -119,7 +119,8 @@ let remainingParts = '';
 while (parts <= 572){
     if (parts % 7 === 0) {
         boxes++;
-    } else (remainingParts = parts % 7);
+    }; 
+    remainingParts = parts % 7;
     parts++;
 }
 
