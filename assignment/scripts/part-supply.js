@@ -115,14 +115,27 @@ console.log('9. Filling boxes with a "while" loop');
 
 let parts = 1;
 let boxes = 0;
-let remainingParts = '';
+let remainingParts = 0;
 while (parts <= 572){
     if (parts % 7 === 0) {
         boxes++;
-    } 
+    }
     remainingParts = parts % 7;
     parts++;
 }
 
 console.log('Boxes filled:', boxes);
 console.log('Remaining Parts:', remainingParts);
+
+
+// let parts = 0;
+// let boxes = 0;
+// while (parts < 572) {
+//   parts++;
+//   if (parts % 7 === 0) {
+//     boxes++;
+//   }
+// }
+
+// console.log('Boxes filled:', boxes);
+// console.log('Remaining Parts:', parts % 7);
